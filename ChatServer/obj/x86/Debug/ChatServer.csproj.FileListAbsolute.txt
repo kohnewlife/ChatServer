@@ -1,0 +1,5 @@
+/Users/huyvo/Github/Web-Server/ChatServer/ChatServer/obj/x86/Debug/ChatServer.csproj.CoreCompileInputs.cache
+/Users/huyvo/Github/Web-Server/ChatServer/ChatServer/bin/Debug/ChatServer.exe
+/Users/huyvo/Github/Web-Server/ChatServer/ChatServer/bin/Debug/ChatServer.pdb
+/Users/huyvo/Github/Web-Server/ChatServer/ChatServer/obj/x86/Debug/ChatServer.exe
+/Users/huyvo/Github/Web-Server/ChatServer/ChatServer/obj/x86/Debug/ChatServer.pdb
