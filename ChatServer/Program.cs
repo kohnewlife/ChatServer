@@ -9,6 +9,7 @@ namespace ChatServer
     class Program
     {
         public static Hashtable ClientList = new Hashtable();
+
         public static void Main(string[] args)
         {
             var serverSocket = new TcpListener(IPAddress.Any, 8888);
@@ -22,13 +23,7 @@ namespace ChatServer
                 // this next line blocks
                 clientSocket = serverSocket.AcceptTcpClient();
                 // Somebody connected and set us data
-                var bytesFrom = new byte[16384];
-
-                NetworkStream networkStream = clientSocket.GetStream();
-                networkStream.Read(bytesFrom, 0, clientSocket.ReceiveBufferSize);
-                string dataFromClient = Encoding.ASCII.GetString(bytesFrom);
-                dataFromClient = dataFromClient
-                    .Substring(0, dataFromClient.IndexOf("$", StringComparison.CurrentCulture));
+                string dataFromClient = getStringFromStream(clientSocket);
                 
                 ClientList.Add(dataFromClient, clientSocket);
                 Broadcast(dataFromClient + " joined ", dataFromClient, false);
@@ -50,6 +45,17 @@ namespace ChatServer
                 broadcastStream.Write(broadcastBytes, 0, broadcastBytes.Length);
                 broadcastStream.Flush();
             }
+        }
+
+        public static string getStringFromStream(TcpClient clientSocket) 
+        {
+            var bytesFrom = new byte[16384];
+
+            NetworkStream networkStream = clientSocket.GetStream();
+            networkStream.Read(bytesFrom, 0, clientSocket.ReceiveBufferSize);
+            string dataFromClient = Encoding.ASCII.GetString(bytesFrom);
+            return dataFromClient
+                .Substring(0, dataFromClient.IndexOf("$", StringComparison.CurrentCulture));
         }
     }
 }

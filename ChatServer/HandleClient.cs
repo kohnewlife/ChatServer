@@ -32,10 +32,7 @@ namespace ChatServer
                 try
                 {
                     requestCount += 1;
-                    NetworkStream networkStream = _clientSocket.GetStream();
-                    networkStream.Read(bytesFrom, 0, _clientSocket.ReceiveBufferSize);
-                    string dataFromClient = Encoding.ASCII.GetString(bytesFrom);
-                    dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$", StringComparison.CurrentCulture));
+                    string dataFromClient = Program.getStringFromStream(_clientSocket);
                     Console.WriteLine("From Client - " + _clientNumber + ": " + dataFromClient);
                     Program.Broadcast(dataFromClient, _clientNumber, true);
 
