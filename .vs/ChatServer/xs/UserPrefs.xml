@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{256B509A-6CB9-4AEE-9330-1C2E584C2144}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChatServer/Program.cs">
+    <Files>
+      <File FileName="ChatServer/Program.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ChatServer PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+</Properties>
